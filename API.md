@@ -9,12 +9,12 @@
 ```typescript
 import { TerraformStateBackend } from '@pepperize/cdk-terraform-state-backend'
 
-new TerraformStateBackend(scope: Stack, id: string, props: TerraformStateBackendProps)
+new TerraformStateBackend(scope: Construct, id: string, props: TerraformStateBackendProps)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| [`scope`](#pepperizecdkterraformstatebackendterraformstatebackendparameterscope)<span title="Required">*</span> | [`@aws-cdk/core.Stack`](#@aws-cdk/core.Stack) | *No description.* |
+| [`scope`](#pepperizecdkterraformstatebackendterraformstatebackendparameterscope)<span title="Required">*</span> | [`@aws-cdk/core.Construct`](#@aws-cdk/core.Construct) | *No description.* |
 | [`id`](#pepperizecdkterraformstatebackendterraformstatebackendparameterid)<span title="Required">*</span> | `string` | *No description.* |
 | [`props`](#pepperizecdkterraformstatebackendterraformstatebackendparameterprops)<span title="Required">*</span> | [`@pepperize/cdk-terraform-state-backend.TerraformStateBackendProps`](#@pepperize/cdk-terraform-state-backend.TerraformStateBackendProps) | *No description.* |
 
@@ -22,7 +22,7 @@ new TerraformStateBackend(scope: Stack, id: string, props: TerraformStateBackend
 
 ##### `scope`<sup>Required</sup> <a name="@pepperize/cdk-terraform-state-backend.TerraformStateBackend.parameter.scope" id="pepperizecdkterraformstatebackendterraformstatebackendparameterscope"></a>
 
-- *Type:* [`@aws-cdk/core.Stack`](#@aws-cdk/core.Stack)
+- *Type:* [`@aws-cdk/core.Construct`](#@aws-cdk/core.Construct)
 
 ---
 
@@ -86,14 +86,25 @@ const terraformStateBackendProps: TerraformStateBackendProps = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| [`namePrefix`](#pepperizecdkterraformstatebackendterraformstatebackendpropspropertynameprefix) | `string` | *No description.* |
+| [`bucketName`](#pepperizecdkterraformstatebackendterraformstatebackendpropspropertybucketname)<span title="Required">*</span> | `string` | *No description.* |
+| [`tableName`](#pepperizecdkterraformstatebackendterraformstatebackendpropspropertytablename)<span title="Required">*</span> | `string` | *No description.* |
 
 ---
 
-##### `namePrefix`<sup>Optional</sup> <a name="@pepperize/cdk-terraform-state-backend.TerraformStateBackendProps.property.namePrefix" id="pepperizecdkterraformstatebackendterraformstatebackendpropspropertynameprefix"></a>
+##### `bucketName`<sup>Required</sup> <a name="@pepperize/cdk-terraform-state-backend.TerraformStateBackendProps.property.bucketName" id="pepperizecdkterraformstatebackendterraformstatebackendpropspropertybucketname"></a>
 
 ```typescript
-public readonly namePrefix: string;
+public readonly bucketName: string;
+```
+
+- *Type:* `string`
+
+---
+
+##### `tableName`<sup>Required</sup> <a name="@pepperize/cdk-terraform-state-backend.TerraformStateBackendProps.property.tableName" id="pepperizecdkterraformstatebackendterraformstatebackendpropspropertytablename"></a>
+
+```typescript
+public readonly tableName: string;
 ```
 
 - *Type:* `string`

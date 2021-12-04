@@ -15,7 +15,10 @@ describe("TerraformStateBackend", () => {
     });
 
     // When
-    new TerraformStateBackend(stack, "TerraformStateBackend", {});
+    new TerraformStateBackend(stack, "TerraformStateBackend", {
+      bucketName: "terraform-state-backend",
+      tableName: "terraform-state-backend",
+    });
     const template = Template.fromStack(stack);
 
     // Then
@@ -52,7 +55,10 @@ describe("TerraformStateBackend", () => {
     });
 
     // When
-    new TerraformStateBackend(stack, "TerraformStateBackend", {});
+    new TerraformStateBackend(stack, "TerraformStateBackend", {
+      bucketName: "terraform-state-backend",
+      tableName: "terraform-state-backend",
+    });
 
     // Then
     Aspects.of(app).add(new AwsSolutionsChecks({ verbose: true }));
@@ -69,7 +75,10 @@ describe("TerraformStateBackend", () => {
     });
 
     // When
-    new TerraformStateBackend(stack, "TerraformStateBackend", {});
+    new TerraformStateBackend(stack, "TerraformStateBackend", {
+      bucketName: "terraform-state-backend",
+      tableName: "terraform-state-backend",
+    });
     const template = Template.fromStack(stack);
 
     // Then

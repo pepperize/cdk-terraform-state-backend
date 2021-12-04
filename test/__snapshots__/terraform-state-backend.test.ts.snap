@@ -15,7 +15,7 @@ Object {
             },
           ],
         },
-        "BucketName": "terraform-state-backend-0-us-east-1",
+        "BucketName": "terraform-state-backend",
         "PublicAccessBlockConfiguration": Object {
           "BlockPublicAcls": true,
           "BlockPublicPolicy": true,
@@ -51,7 +51,7 @@ Object {
         "SSESpecification": Object {
           "SSEEnabled": false,
         },
-        "TableName": "terraform-state-backend-0",
+        "TableName": "terraform-state-backend",
       },
       "Type": "AWS::DynamoDB::Table",
       "UpdateReplacePolicy": "Retain",
