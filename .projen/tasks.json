@@ -169,6 +169,31 @@
         }
       ]
     },
+    "publish:nuget": {
+      "name": "publish:nuget",
+      "description": "Publish this package to NuGet Gallery",
+      "requiredEnv": [
+        "NUGET_API_KEY"
+      ],
+      "steps": [
+        {
+          "exec": "npx -p jsii-release@latest jsii-release-nuget"
+        }
+      ]
+    },
+    "publish:pypi": {
+      "name": "publish:pypi",
+      "description": "Publish this package to PyPI",
+      "requiredEnv": [
+        "TWINE_USERNAME",
+        "TWINE_PASSWORD"
+      ],
+      "steps": [
+        {
+          "exec": "npx -p jsii-release@latest jsii-release-pypi"
+        }
+      ]
+    },
     "release": {
       "name": "release",
       "description": "Prepare a release from \"main\" branch",
@@ -264,7 +289,7 @@
           "exec": "yarn install --check-files"
         },
         {
-          "exec": "yarn upgrade @aws-cdk/assert @types/jest @types/node @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-import-resolver-node eslint-import-resolver-typescript eslint-plugin-import eslint jest jest-junit jsii jsii-diff jsii-docgen jsii-pacmak json-schema npm-check-updates standard-version ts-jest typescript constructs"
+          "exec": "yarn upgrade @aws-cdk/assert @aws-cdk/assertions @types/jest @types/node @typescript-eslint/eslint-plugin @typescript-eslint/parser cdk-nag eslint-config-prettier eslint-import-resolver-node eslint-import-resolver-typescript eslint-plugin-import eslint-plugin-prettier eslint jest jest-junit jsii jsii-diff jsii-docgen jsii-pacmak json-schema npm-check-updates prettier standard-version ts-jest typescript @aws-cdk/aws-dynamodb @aws-cdk/aws-iam @aws-cdk/aws-s3 @aws-cdk/core constructs @aws-cdk/aws-dynamodb @aws-cdk/aws-iam @aws-cdk/aws-s3 @aws-cdk/core"
         },
         {
           "exec": "npx projen"

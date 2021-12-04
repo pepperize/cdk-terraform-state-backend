@@ -1,8 +1,9 @@
 {
-  "name": "cdk-terraform-state-backend",
+  "name": "@pepperize/cdk-terraform-state-backend",
+  "description": "This project provides a CDK construct bootstrapping an AWS account with a S3 Bucket and a DynamoDB table as terraform state backend.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/patrick.florek/cdk-terraform-state-backend.git"
+    "url": "https://github.com/patrick.florek/papperize/cdk-terraform-state-backend.git"
   },
   "scripts": {
     "build": "npx projen build",
@@ -18,6 +19,8 @@
     "pre-compile": "npx projen pre-compile",
     "publish:github": "npx projen publish:github",
     "publish:npm": "npx projen publish:npm",
+    "publish:nuget": "npx projen publish:nuget",
+    "publish:pypi": "npx projen publish:pypi",
     "release": "npx projen release",
     "test": "npx projen test",
     "test:update": "npx projen test:update",
@@ -26,23 +29,28 @@
     "upgrade": "npx projen upgrade",
     "upgrade-projen": "npx projen upgrade-projen",
     "watch": "npx projen watch",
-    "projen": "npx projen"
+    "projen": "npx projen",
+    "format": "prettier --write 'src/**/*.ts' test/**/*.ts '.projenrc.js' 'README.md'"
   },
   "author": {
     "name": "Patrick Florek",
     "email": "patrick.florek@gmail.com",
-    "organization": false
+    "organization": true
   },
   "devDependencies": {
-    "@aws-cdk/assert": "^1.129.0",
+    "@aws-cdk/assert": "^1.134.0",
+    "@aws-cdk/assertions": "^1.134.0",
     "@types/jest": "*",
     "@types/node": "^14.17.0",
     "@typescript-eslint/eslint-plugin": "^5",
     "@typescript-eslint/parser": "^5",
+    "cdk-nag": "^1.4.3",
     "eslint": "^8",
+    "eslint-config-prettier": "^8.3.0",
     "eslint-import-resolver-node": "^0.3.6",
     "eslint-import-resolver-typescript": "^2.5.0",
     "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-prettier": "^4.0.0",
     "jest": "^27.4.3",
     "jest-junit": "^13",
     "jsii": "^1.46.0",
@@ -51,20 +59,31 @@
     "jsii-pacmak": "^1.46.0",
     "json-schema": "^0.4.0",
     "npm-check-updates": "^11",
+    "prettier": "^2.5.1",
     "projen": "^0.36.6",
     "standard-version": "^9",
     "ts-jest": "^27.0.7",
     "typescript": "^4.5.2"
   },
   "peerDependencies": {
+    "@aws-cdk/aws-dynamodb": "^1.134.0",
+    "@aws-cdk/aws-iam": "^1.134.0",
+    "@aws-cdk/aws-s3": "^1.134.0",
+    "@aws-cdk/core": "^1.134.0",
     "constructs": "^3.2.27"
+  },
+  "dependencies": {
+    "@aws-cdk/aws-dynamodb": "^1.134.0",
+    "@aws-cdk/aws-iam": "^1.134.0",
+    "@aws-cdk/aws-s3": "^1.134.0",
+    "@aws-cdk/core": "^1.134.0"
   },
   "bundledDependencies": [],
   "keywords": [
     "cdk"
   ],
   "main": "lib/index.js",
-  "license": "Apache-2.0",
+  "license": "MIT",
   "version": "0.0.0",
   "jest": {
     "testMatch": [
@@ -109,7 +128,16 @@
   "stability": "stable",
   "jsii": {
     "outdir": "dist",
-    "targets": {},
+    "targets": {
+      "python": {
+        "distName": "pepperize.cdk-terraform-state-backend",
+        "module": "pepperize_cdk_terraform_state_backend"
+      },
+      "dotnet": {
+        "namespace": "Pepperize.CDK",
+        "packageId": "Pepperize.CDK.TerraformStateBackend"
+      }
+    },
     "tsc": {
       "outDir": "lib",
       "rootDir": "src"
