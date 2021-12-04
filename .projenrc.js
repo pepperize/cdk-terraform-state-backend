@@ -1,6 +1,4 @@
-const { AwsCdkConstructLibrary, JsonFile,
-  NpmAccess
-} = require("projen");
+const { AwsCdkConstructLibrary, JsonFile, NpmAccess } = require("projen");
 const project = new AwsCdkConstructLibrary({
   author: "Patrick Florek",
   authorAddress: "patrick.florek@gmail.com",
