@@ -6,3 +6,46 @@
 [![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/pepperize/cdk-terraform-state-backend?sort=semver&style=flat-square)](https://github.com/pepperize/cdk-terraform-state-backend/releases)
 
 # AWS CDK Terraform state backend
+
+This project provides a CDK construct bootstrapping an AWS account with a S3 Bucket and a DynamoDB table as [Terraform state backend](https://www.terraform.io/docs/language/settings/backends/s3.html).
+
+Terraform doesn't come shipped with a cli command bootstrapping the account for [State Storage and Locking](https://www.terraform.io/docs/language/state/backends.html)
+like [AWS CDK](https://docs.aws.amazon.com/cdk/latest/guide/cli.html#cli-bootstrap) provides with `cdk bootstrap`.
+While bootstrapping the AWS Organization and Accounts this construct may be used to create:
+
+- S3 Bucket with blocked public access, versioned, encrypted by SSE-KMS
+- DynamoDB Table with pay per request, continuous backups using point-in-time recovery, encrypted by AWS owned key
+
+## Example
+
+```typescript
+import { App, Stack } from "@aws-cdk/core";
+import { TerraformStateBackend } from "@pepperize/cdk-terraform-state-backend";
+
+const app = new App();
+const stack = new Stack(app, "stack", {
+  env: {
+    account: "123456789012",
+    region: "us-east-1",
+  },
+});
+
+// When
+new TerraformStateBackend(stack, "TerraformStateBackend", {
+  bucketName: "terraform-state-backend",
+  tableName: "terraform-state-backend",
+});
+```
+
+```hcl
+terraform {
+  backend "s3" {
+    bucket = "terraform-state-backend-123456789012-us-east-1"
+    dynamodb_table = "terraform-state-backend-123456789012"
+    key = "path/to/my/key"
+    region = "us-east-1"
+  }
+}
+```
+
+See [Terraform S3 Example Configuration](https://www.terraform.io/docs/language/settings/backends/s3.html#example-configuration)
