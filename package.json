@@ -80,10 +80,20 @@
   },
   "bundledDependencies": [],
   "keywords": [
+    "AWS",
+    "Backend",
+    "CDK",
+    "DynamoDB",
+    "S3",
+    "State",
+    "Terraform",
     "cdk"
   ],
   "main": "lib/index.js",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "version": "0.0.0",
   "jest": {
     "testMatch": [

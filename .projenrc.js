@@ -1,4 +1,6 @@
-const { AwsCdkConstructLibrary, JsonFile } = require("projen");
+const { AwsCdkConstructLibrary, JsonFile,
+  NpmAccess
+} = require("projen");
 const project = new AwsCdkConstructLibrary({
   author: "Patrick Florek",
   authorAddress: "patrick.florek@gmail.com",
@@ -10,6 +12,7 @@ const project = new AwsCdkConstructLibrary({
   name: "@pepperize/cdk-terraform-state-backend",
   description:
     "This project provides a CDK construct bootstrapping an AWS account with a S3 Bucket and a DynamoDB table as terraform state backend.",
+  keywords: ["AWS", "CDK", "Terraform", "State", "Backend", "S3", "DynamoDB"],
   repositoryUrl: "https://github.com/patrick.florek/papperize/cdk-terraform-state-backend.git",
 
   cdkDependencies: [
@@ -32,6 +35,7 @@ const project = new AwsCdkConstructLibrary({
   },
 
   releaseToNpm: true,
+  npmAccess: NpmAccess.PUBLIC,
   publishToNuget: {
     dotNetNamespace: "Pepperize.CDK",
     packageId: "Pepperize.CDK.TerraformStateBackend",
