@@ -3,7 +3,7 @@
   "description": "This project provides a CDK construct bootstrapping an AWS account with a S3 Bucket and a DynamoDB table as terraform state backend.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/patrick.florek/papperize/cdk-terraform-state-backend.git"
+    "url": "https://github.com/pepperize/cdk-terraform-state-backend.git"
   },
   "scripts": {
     "build": "npx projen build",

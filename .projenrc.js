@@ -11,7 +11,7 @@ const project = new AwsCdkConstructLibrary({
   description:
     "This project provides a CDK construct bootstrapping an AWS account with a S3 Bucket and a DynamoDB table as terraform state backend.",
   keywords: ["AWS", "CDK", "Terraform", "State", "Backend", "S3", "DynamoDB"],
-  repositoryUrl: "https://github.com/patrick.florek/papperize/cdk-terraform-state-backend.git",
+  repositoryUrl: "https://github.com/pepperize/cdk-terraform-state-backend.git",
 
   cdkDependencies: [
     "@aws-cdk/core",
