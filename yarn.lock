@@ -2,7 +2,7 @@
 # yarn lockfile v1
 
 
-"@aws-cdk/assert@^1.134.0":
+"@aws-cdk/assert@^1.114.0":
   version "1.134.0"
   resolved "https://registry.yarnpkg.com/@aws-cdk/assert/-/assert-1.134.0.tgz#c105412a03cf0ebf7b1661d213ec9e15ba1de6e6"
   integrity sha512-DSk4n5eTPYGwKKPdViKHq9DAGYZlzUIi1wbclvAw6b9W1ojvuSbVYiSORNHf9Phyt4fHb3mVX3D0hjxhSy4iDQ==
@@ -12,7 +12,7 @@
     "@aws-cdk/cx-api" "1.134.0"
     constructs "^3.3.69"
 
-"@aws-cdk/assertions@^1.134.0":
+"@aws-cdk/assertions@^1.114.0":
   version "1.134.0"
   resolved "https://registry.yarnpkg.com/@aws-cdk/assertions/-/assertions-1.134.0.tgz#13d70cacf3c135778b9fe117e47fe6871ca5de33"
   integrity sha512-DZCTK/WirGMZSVorvo/N7IMlQ5QPMhXINzHYQjIdwmzmgwoa1cLBU2SlL+/RZE1Pytpum0SMSQQltPMKtOSuAw==
@@ -384,7 +384,7 @@
     "@aws-cdk/core" "1.134.0"
     constructs "^3.3.69"
 
-"@aws-cdk/aws-dynamodb@1.134.0", "@aws-cdk/aws-dynamodb@^1.123.0", "@aws-cdk/aws-dynamodb@^1.134.0":
+"@aws-cdk/aws-dynamodb@1.134.0", "@aws-cdk/aws-dynamodb@^1.114.0", "@aws-cdk/aws-dynamodb@^1.123.0":
   version "1.134.0"
   resolved "https://registry.yarnpkg.com/@aws-cdk/aws-dynamodb/-/aws-dynamodb-1.134.0.tgz#c72f9d90af35446c1cd8062f342fb29b280c6f22"
   integrity sha512-WPxrtUVMvlt73dfrlvQnC+DdR8xrsqfT/fZ4xvP604jRtM2UlGIuXrURSWL34ozwBIazs3IrlWyLWXaYC5kdGg==
@@ -591,7 +591,7 @@
     "@aws-cdk/custom-resources" "1.134.0"
     constructs "^3.3.69"
 
-"@aws-cdk/aws-iam@1.134.0", "@aws-cdk/aws-iam@^1.123.0", "@aws-cdk/aws-iam@^1.134.0":
+"@aws-cdk/aws-iam@1.134.0", "@aws-cdk/aws-iam@^1.114.0", "@aws-cdk/aws-iam@^1.123.0":
   version "1.134.0"
   resolved "https://registry.yarnpkg.com/@aws-cdk/aws-iam/-/aws-iam-1.134.0.tgz#53a45dd0fd3c1327952dd10209c95a5e8366488d"
   integrity sha512-EZy+oyIiAl2WvAfKpn2zhSZ9Wtcu06RUTIbkrourietnQoQhqhiwpp/H84VosgUgwpHsx7BNmZ8EJJXJXs7XfA==
@@ -822,7 +822,7 @@
     "@aws-cdk/cx-api" "1.134.0"
     constructs "^3.3.69"
 
-"@aws-cdk/aws-s3@1.134.0", "@aws-cdk/aws-s3@^1.123.0", "@aws-cdk/aws-s3@^1.134.0":
+"@aws-cdk/aws-s3@1.134.0", "@aws-cdk/aws-s3@^1.114.0", "@aws-cdk/aws-s3@^1.123.0":
   version "1.134.0"
   resolved "https://registry.yarnpkg.com/@aws-cdk/aws-s3/-/aws-s3-1.134.0.tgz#70374da0fa5fbd799f9270c857c94c8a6d042c4d"
   integrity sha512-HhVITjecHzJSf1eH5JqphvQBAaSXSDdbNQMNSX/qmMnhorsvOuU/vSmn4mmPTOUnbR6NP4k51WotVZ9qmMCaow==
@@ -989,7 +989,7 @@
     string-width "^4.2.3"
     table "^6.7.3"
 
-"@aws-cdk/core@1.134.0", "@aws-cdk/core@^1.123.0", "@aws-cdk/core@^1.134.0":
+"@aws-cdk/core@1.134.0", "@aws-cdk/core@^1.114.0", "@aws-cdk/core@^1.123.0":
   version "1.134.0"
   resolved "https://registry.yarnpkg.com/@aws-cdk/core/-/core-1.134.0.tgz#cdcb94ffcfbfa04cdb9c585f008c995e1f8bad5c"
   integrity sha512-rdQYFTrGBemgy1C23r2s18ONXgnsp4dXyZMTTcy7e6QkF3JBTI4za2GUWY4XQaKnchGV9UhylPNFqh59hXzEUA==

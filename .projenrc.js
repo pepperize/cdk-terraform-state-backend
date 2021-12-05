@@ -5,7 +5,7 @@ const project = new AwsCdkConstructLibrary({
   authorOrganization: true,
   license: "MIT",
   copyrightOwner: "Pepperize UG (haftungsbeschränkt)",
-  cdkVersion: "1.134.0",
+  cdkVersion: "1.114.0",
   defaultReleaseBranch: "main",
   name: "@pepperize/cdk-terraform-state-backend",
   description:
