@@ -16,6 +16,32 @@ While bootstrapping the AWS Organization and Accounts this construct may be used
 - S3 Bucket with blocked public access, versioned, encrypted by SSE-KMS
 - DynamoDB Table with pay per request, continuous backups using point-in-time recovery, encrypted by AWS owned key
 
+## Install
+
+### TypeScript
+
+```shell
+npm install @pepperize/cdk-terraform-state-backend
+```
+
+or
+
+```shell
+yarn add @pepperize/cdk-terraform-state-backend
+```
+
+### Python
+
+```shell
+pip install pepperize.cdk-terraform-state-backend
+```
+
+### C# / .Net
+
+```
+dotnet add package Pepperize.CDK.TerraformStateBackend
+```
+
 ## Example
 
 ```typescript
