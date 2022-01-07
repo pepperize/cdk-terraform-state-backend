@@ -1,4 +1,4 @@
-const { AwsCdkConstructLibrary, JsonFile, NpmAccess } = require("projen");
+const { AwsCdkConstructLibrary, JsonFile, javascript } = require("projen");
 const project = new AwsCdkConstructLibrary({
   author: "Patrick Florek",
   authorAddress: "patrick.florek@gmail.com",
@@ -35,7 +35,7 @@ const project = new AwsCdkConstructLibrary({
   },
 
   releaseToNpm: true,
-  npmAccess: NpmAccess.PUBLIC,
+  npmAccess: javascript.NpmAccess.PUBLIC,
   publishToNuget: {
     dotNetNamespace: "Pepperize.CDK",
     packageId: "Pepperize.CDK.TerraformStateBackend",
