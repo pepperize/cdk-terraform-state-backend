@@ -47,7 +47,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
 
   eslint: true,
   prettier: true,
-  prettierOptions: {settings: {printWidth: 120}},
+  prettierOptions: { settings: { printWidth: 120 } },
 
   gitignore: [".idea"],
 });
