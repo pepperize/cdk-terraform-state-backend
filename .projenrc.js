@@ -1,4 +1,4 @@
-const { awscdk, JsonFile, javascript } = require("projen");
+const { awscdk, javascript } = require("projen");
 const project = new awscdk.AwsCdkConstructLibrary({
   author: "Patrick Florek",
   authorAddress: "patrick.florek@gmail.com",
@@ -46,20 +46,12 @@ const project = new awscdk.AwsCdkConstructLibrary({
   },
 
   eslint: true,
-  eslintOptions: {
-    prettier: true,
-  },
+  prettier: true,
+  prettierOptions: {settings: {printWidth: 120}},
 
   gitignore: [".idea"],
 });
 
 project.setScript("format", "prettier --write 'src/**/*.ts' test/**/*.ts '.projenrc.js' 'README.md'");
-
-new JsonFile(project, ".prettierrc", {
-  obj: {
-    printWidth: 120,
-  },
-  marker: false,
-});
 
 project.synth();
