@@ -1,5 +1,5 @@
-const { AwsCdkConstructLibrary, JsonFile, javascript } = require("projen");
-const project = new AwsCdkConstructLibrary({
+const { awscdk, JsonFile, javascript } = require("projen");
+const project = new awscdk.AwsCdkConstructLibrary({
   author: "Patrick Florek",
   authorAddress: "patrick.florek@gmail.com",
   authorOrganization: true,
