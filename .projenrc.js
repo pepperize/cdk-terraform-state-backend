@@ -52,6 +52,6 @@ const project = new awscdk.AwsCdkConstructLibrary({
   gitignore: [".idea"],
 });
 
-project.setScript("format", "prettier --write 'src/**/*.ts' test/**/*.ts '.projenrc.js' 'README.md'");
+project.setScript("format", "prettier --write src/**/*.ts test/**/*.ts .projenrc.js README.md");
 
 project.synth();
