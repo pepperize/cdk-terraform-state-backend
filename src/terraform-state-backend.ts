@@ -1,6 +1,5 @@
-import { AttributeType, BillingMode, ITable, Table, TableEncryption } from "@aws-cdk/aws-dynamodb";
-import { BlockPublicAccess, Bucket, BucketEncryption, IBucket } from "@aws-cdk/aws-s3";
-import { Construct } from "@aws-cdk/core";
+import { aws_dynamodb, aws_s3 } from "aws-cdk-lib";
+import { Construct } from "constructs";
 
 export interface TerraformStateBackendProps {
   readonly bucketName: string;
@@ -8,29 +7,29 @@ export interface TerraformStateBackendProps {
 }
 
 export class TerraformStateBackend extends Construct {
-  readonly bucket: IBucket;
-  readonly table: ITable;
+  readonly bucket: aws_s3.IBucket;
+  readonly table: aws_dynamodb.ITable;
 
   public constructor(scope: Construct, id: string, props: TerraformStateBackendProps) {
     super(scope, id);
 
     const { bucketName, tableName } = props;
 
-    this.bucket = new Bucket(this, "Bucket", {
+    this.bucket = new aws_s3.Bucket(this, "Bucket", {
       bucketName: bucketName,
       versioned: true,
-      encryption: BucketEncryption.KMS_MANAGED,
-      blockPublicAccess: BlockPublicAccess.BLOCK_ALL,
+      encryption: aws_s3.BucketEncryption.KMS_MANAGED,
+      blockPublicAccess: aws_s3.BlockPublicAccess.BLOCK_ALL,
     });
 
-    this.table = new Table(this, "Table", {
+    this.table = new aws_dynamodb.Table(scope, "Table", {
       tableName: tableName,
-      billingMode: BillingMode.PAY_PER_REQUEST,
+      billingMode: aws_dynamodb.BillingMode.PAY_PER_REQUEST,
       partitionKey: {
         name: "LockID",
-        type: AttributeType.STRING,
+        type: aws_dynamodb.AttributeType.STRING,
       },
-      encryption: TableEncryption.DEFAULT,
+      encryption: aws_dynamodb.TableEncryption.DEFAULT,
       pointInTimeRecovery: true,
     });
   }
