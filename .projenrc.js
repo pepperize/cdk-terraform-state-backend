@@ -13,8 +13,8 @@ const project = new AwsCdkConstructLibrary({
     "This project provides a CDK construct bootstrapping an AWS account with a S3 Bucket and a DynamoDB table as terraform state backend.",
   keywords: ["AWS", "CDK", "Terraform", "State", "Backend", "S3", "DynamoDB"],
   repositoryUrl: "https://github.com/pepperize/cdk-terraform-state-backend.git",
-  testDeps: ["@aws-cdk/assertions"] /* AWS CDK modules required for testing. */,
-  devDeps: ["@pepperize/projen-awscdk-construct", "cdk-nag"] /* Build dependencies for this module. */,
+  testDeps: ["@aws-cdk/assertions"],
+  devDeps: ["@pepperize/projen-awscdk-construct", "cdk-nag@^2.0.0"],
 
   releaseToNpm: true,
   npmAccess: javascript.NpmAccess.PUBLIC,
