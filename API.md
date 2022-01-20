@@ -14,7 +14,7 @@ new TerraformStateBackend(scope: Construct, id: string, props: TerraformStateBac
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| [`scope`](#pepperizecdkterraformstatebackendterraformstatebackendparameterscope)<span title="Required">*</span> | [`@aws-cdk/core.Construct`](#@aws-cdk/core.Construct) | *No description.* |
+| [`scope`](#pepperizecdkterraformstatebackendterraformstatebackendparameterscope)<span title="Required">*</span> | [`constructs.Construct`](#constructs.Construct) | *No description.* |
 | [`id`](#pepperizecdkterraformstatebackendterraformstatebackendparameterid)<span title="Required">*</span> | `string` | *No description.* |
 | [`props`](#pepperizecdkterraformstatebackendterraformstatebackendparameterprops)<span title="Required">*</span> | [`@pepperize/cdk-terraform-state-backend.TerraformStateBackendProps`](#@pepperize/cdk-terraform-state-backend.TerraformStateBackendProps) | *No description.* |
 
@@ -22,7 +22,7 @@ new TerraformStateBackend(scope: Construct, id: string, props: TerraformStateBac
 
 ##### `scope`<sup>Required</sup> <a name="@pepperize/cdk-terraform-state-backend.TerraformStateBackend.parameter.scope" id="pepperizecdkterraformstatebackendterraformstatebackendparameterscope"></a>
 
-- *Type:* [`@aws-cdk/core.Construct`](#@aws-cdk/core.Construct)
+- *Type:* [`constructs.Construct`](#constructs.Construct)
 
 ---
 
@@ -44,8 +44,8 @@ new TerraformStateBackend(scope: Construct, id: string, props: TerraformStateBac
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| [`bucket`](#pepperizecdkterraformstatebackendterraformstatebackendpropertybucket)<span title="Required">*</span> | [`@aws-cdk/aws-s3.IBucket`](#@aws-cdk/aws-s3.IBucket) | *No description.* |
-| [`table`](#pepperizecdkterraformstatebackendterraformstatebackendpropertytable)<span title="Required">*</span> | [`@aws-cdk/aws-dynamodb.ITable`](#@aws-cdk/aws-dynamodb.ITable) | *No description.* |
+| [`bucket`](#pepperizecdkterraformstatebackendterraformstatebackendpropertybucket)<span title="Required">*</span> | [`aws-cdk-lib.aws_s3.IBucket`](#aws-cdk-lib.aws_s3.IBucket) | *No description.* |
+| [`table`](#pepperizecdkterraformstatebackendterraformstatebackendpropertytable)<span title="Required">*</span> | [`aws-cdk-lib.aws_dynamodb.ITable`](#aws-cdk-lib.aws_dynamodb.ITable) | *No description.* |
 
 ---
 
@@ -55,7 +55,7 @@ new TerraformStateBackend(scope: Construct, id: string, props: TerraformStateBac
 public readonly bucket: IBucket;
 ```
 
-- *Type:* [`@aws-cdk/aws-s3.IBucket`](#@aws-cdk/aws-s3.IBucket)
+- *Type:* [`aws-cdk-lib.aws_s3.IBucket`](#aws-cdk-lib.aws_s3.IBucket)
 
 ---
 
@@ -65,7 +65,7 @@ public readonly bucket: IBucket;
 public readonly table: ITable;
 ```
 
-- *Type:* [`@aws-cdk/aws-dynamodb.ITable`](#@aws-cdk/aws-dynamodb.ITable)
+- *Type:* [`aws-cdk-lib.aws_dynamodb.ITable`](#aws-cdk-lib.aws_dynamodb.ITable)
 
 ---
 
