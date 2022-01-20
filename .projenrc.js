@@ -1,38 +1,20 @@
-const { awscdk, javascript } = require("projen");
-const project = new awscdk.AwsCdkConstructLibrary({
+const { AwsCdkConstructLibrary } = require("@pepperize/projen-awscdk-construct");
+const { javascript } = require("projen");
+
+const project = new AwsCdkConstructLibrary({
   author: "Patrick Florek",
   authorAddress: "patrick.florek@gmail.com",
-  authorOrganization: true,
   license: "MIT",
   copyrightOwner: "Pepperize UG (haftungsbeschränkt)",
-  cdkVersion: "1.114.0",
+  cdkVersion: "2.8.0",
   defaultReleaseBranch: "main",
   name: "@pepperize/cdk-terraform-state-backend",
   description:
     "This project provides a CDK construct bootstrapping an AWS account with a S3 Bucket and a DynamoDB table as terraform state backend.",
   keywords: ["AWS", "CDK", "Terraform", "State", "Backend", "S3", "DynamoDB"],
   repositoryUrl: "https://github.com/pepperize/cdk-terraform-state-backend.git",
-
-  cdkDependencies: [
-    "@aws-cdk/core",
-    "@aws-cdk/aws-dynamodb",
-    "@aws-cdk/aws-iam",
-    "@aws-cdk/aws-s3",
-  ] /* Which AWS CDK modules (those that start with "@aws-cdk/") does this library require when consumed? */,
-  cdkTestDependencies: ["@aws-cdk/assertions"] /* AWS CDK modules required for testing. */,
-  // deps: [],                        /* Runtime dependencies of this module. */
-  // description: undefined,          /* The description is just a string that helps people understand the purpose of the package. */
-  devDeps: ["cdk-nag"] /* Build dependencies for this module. */,
-  // packageName: undefined,          /* The "name" in package.json. */
-  // release: undefined,              /* Add release management to this project. */
-
-  autoApproveUpgrades: true,
-  autoApproveOptions: { allowedUsernames: ["pflorek"], secret: "GITHUB_TOKEN" },
-  depsUpgradeOptions: {
-    workflowOptions: {
-      secret: "PROJEN_GITHUB_TOKEN",
-    },
-  },
+  testDeps: ["@aws-cdk/assertions"] /* AWS CDK modules required for testing. */,
+  devDeps: ["@pepperize/projen-awscdk-construct", "cdk-nag"] /* Build dependencies for this module. */,
 
   releaseToNpm: true,
   npmAccess: javascript.NpmAccess.PUBLIC,
@@ -44,14 +26,6 @@ const project = new awscdk.AwsCdkConstructLibrary({
     distName: "pepperize.cdk-terraform-state-backend",
     module: "pepperize_cdk_terraform_state_backend",
   },
-
-  eslint: true,
-  prettier: true,
-  prettierOptions: { settings: { printWidth: 120 } },
-
-  gitignore: [".idea"],
 });
-
-project.setScript("format", "prettier --write src/**/*.ts test/**/*.ts .projenrc.js README.md");
 
 project.synth();
