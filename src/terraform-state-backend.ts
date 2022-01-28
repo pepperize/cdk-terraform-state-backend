@@ -1,3 +1,4 @@
+import { PrivateBucket } from "@pepperize/cdk-private-bucket";
 import { aws_dynamodb, aws_s3 } from "aws-cdk-lib";
 import { Construct } from "constructs";
 
@@ -15,11 +16,9 @@ export class TerraformStateBackend extends Construct {
 
     const { bucketName, tableName } = props;
 
-    this.bucket = new aws_s3.Bucket(this, "Bucket", {
+    this.bucket = new PrivateBucket(this, "Bucket", {
       bucketName: bucketName,
       versioned: true,
-      encryption: aws_s3.BucketEncryption.KMS_MANAGED,
-      blockPublicAccess: aws_s3.BlockPublicAccess.BLOCK_ALL,
     });
 
     this.table = new aws_dynamodb.Table(scope, "Table", {

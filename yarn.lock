@@ -645,6 +645,11 @@
   resolved "https://registry.yarnpkg.com/@oozcitak/util/-/util-8.3.8.tgz#10f65fe1891fd8cde4957360835e78fd1936bfdd"
   integrity sha512-T8TbSnGsxo6TDBJx/Sgv/BlVJL3tshxZP7Aq5R1mSnM5OcHY2dQaxLMu2+E8u3gN0MLOzdjurqN4ZRVuzQycOQ==
 
+"@pepperize/cdk-private-bucket@^0.0.16":
+  version "0.0.16"
+  resolved "https://registry.yarnpkg.com/@pepperize/cdk-private-bucket/-/cdk-private-bucket-0.0.16.tgz#d137b395e1a2f50b3fc93669a1e90c6155ee3a0e"
+  integrity sha512-/CjNxGY0kVVP7lYL+u0ZsrTHBrzQ0Whd3JFpmgcVkXUUCYpya1Oe1xhGbJfprrHtTptLD4Yz1WKWLpmhZxWf3Q==
+
 "@pepperize/projen-awscdk-construct@^0.0.8":
   version "0.0.8"
   resolved "https://registry.yarnpkg.com/@pepperize/projen-awscdk-construct/-/projen-awscdk-construct-0.0.8.tgz#b746712f89a2d49e9c77c4763cddec1f4fbe756a"
