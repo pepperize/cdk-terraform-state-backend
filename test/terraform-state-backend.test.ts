@@ -30,7 +30,7 @@ describe("TerraformStateBackend", () => {
         ServerSideEncryptionConfiguration: [
           {
             ServerSideEncryptionByDefault: {
-              SSEAlgorithm: "aws:kms",
+              SSEAlgorithm: "AES256",
             },
           },
         ],

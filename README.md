@@ -13,7 +13,7 @@ Terraform doesn't come shipped with a cli command bootstrapping the account for 
 like [AWS CDK](https://docs.aws.amazon.com/cdk/latest/guide/cli.html#cli-bootstrap) provides with `cdk bootstrap`.
 While bootstrapping the AWS Organization and Accounts this construct may be used to create:
 
-- S3 Bucket with blocked public access, versioned, encrypted by SSE-KMS
+- S3 Bucket with blocked public access, versioned, encrypted by SSE-S3
 - DynamoDB Table with pay per request, continuous backups using point-in-time recovery, encrypted by AWS owned key
 
 See [API.md](https://github.com/pepperize/cdk-terraform-state-backend/blob/main/API.md)

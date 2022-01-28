@@ -66,18 +66,21 @@
     "typescript": "^4.5.4"
   },
   "peerDependencies": {
+    "@pepperize/cdk-private-bucket": "^0.0.16",
     "aws-cdk-lib": "^2.8.0",
     "constructs": "^10.0.5"
   },
+  "dependencies": {
+    "@pepperize/cdk-private-bucket": "^0.0.16"
+  },
   "keywords": [
-    "AWS",
-    "Backend",
-    "CDK",
-    "DynamoDB",
-    "S3",
-    "State",
-    "Terraform",
-    "cdk"
+    "aws",
+    "backend",
+    "cdk",
+    "dynamodb",
+    "s3",
+    "state",
+    "terraform"
   ],
   "main": "lib/index.js",
   "license": "MIT",

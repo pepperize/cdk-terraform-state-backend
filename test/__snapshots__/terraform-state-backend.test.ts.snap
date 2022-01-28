@@ -44,7 +44,7 @@ Object {
           "ServerSideEncryptionConfiguration": Array [
             Object {
               "ServerSideEncryptionByDefault": Object {
-                "SSEAlgorithm": "aws:kms",
+                "SSEAlgorithm": "AES256",
               },
             },
           ],
@@ -62,6 +62,53 @@ Object {
       },
       "Type": "AWS::S3::Bucket",
       "UpdateReplacePolicy": "Retain",
+    },
+    "TerraformStateBackendBucketPolicy0DD111F4": Object {
+      "Properties": Object {
+        "Bucket": Object {
+          "Ref": "TerraformStateBackendBucket7CE90B83",
+        },
+        "PolicyDocument": Object {
+          "Statement": Array [
+            Object {
+              "Action": "s3:*",
+              "Condition": Object {
+                "Bool": Object {
+                  "aws:SecureTransport": "false",
+                },
+              },
+              "Effect": "Deny",
+              "Principal": Object {
+                "AWS": "*",
+              },
+              "Resource": Array [
+                Object {
+                  "Fn::GetAtt": Array [
+                    "TerraformStateBackendBucket7CE90B83",
+                    "Arn",
+                  ],
+                },
+                Object {
+                  "Fn::Join": Array [
+                    "",
+                    Array [
+                      Object {
+                        "Fn::GetAtt": Array [
+                          "TerraformStateBackendBucket7CE90B83",
+                          "Arn",
+                        ],
+                      },
+                      "/*",
+                    ],
+                  ],
+                },
+              ],
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+      },
+      "Type": "AWS::S3::BucketPolicy",
     },
   },
   "Rules": Object {
