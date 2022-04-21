@@ -45,6 +45,7 @@ new TerraformStateBackend(scope: Construct, id: string, props: TerraformStateBac
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | [`bucket`](#pepperizecdkterraformstatebackendterraformstatebackendpropertybucket)<span title="Required">*</span> | [`aws-cdk-lib.aws_s3.IBucket`](#aws-cdk-lib.aws_s3.IBucket) | *No description.* |
+| [`policy`](#pepperizecdkterraformstatebackendterraformstatebackendpropertypolicy)<span title="Required">*</span> | [`aws-cdk-lib.aws_iam.IPolicy`](#aws-cdk-lib.aws_iam.IPolicy) | *No description.* |
 | [`table`](#pepperizecdkterraformstatebackendterraformstatebackendpropertytable)<span title="Required">*</span> | [`aws-cdk-lib.aws_dynamodb.ITable`](#aws-cdk-lib.aws_dynamodb.ITable) | *No description.* |
 
 ---
@@ -56,6 +57,16 @@ public readonly bucket: IBucket;
 ```
 
 - *Type:* [`aws-cdk-lib.aws_s3.IBucket`](#aws-cdk-lib.aws_s3.IBucket)
+
+---
+
+##### `policy`<sup>Required</sup> <a name="@pepperize/cdk-terraform-state-backend.TerraformStateBackend.property.policy" id="pepperizecdkterraformstatebackendterraformstatebackendpropertypolicy"></a>
+
+```typescript
+public readonly policy: IPolicy;
+```
+
+- *Type:* [`aws-cdk-lib.aws_iam.IPolicy`](#aws-cdk-lib.aws_iam.IPolicy)
 
 ---
 
@@ -86,12 +97,13 @@ const terraformStateBackendProps: TerraformStateBackendProps = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| [`bucketName`](#pepperizecdkterraformstatebackendterraformstatebackendpropspropertybucketname)<span title="Required">*</span> | `string` | *No description.* |
-| [`tableName`](#pepperizecdkterraformstatebackendterraformstatebackendpropspropertytablename)<span title="Required">*</span> | `string` | *No description.* |
+| [`bucketName`](#pepperizecdkterraformstatebackendterraformstatebackendpropspropertybucketname) | `string` | *No description.* |
+| [`policyName`](#pepperizecdkterraformstatebackendterraformstatebackendpropspropertypolicyname) | `string` | *No description.* |
+| [`tableName`](#pepperizecdkterraformstatebackendterraformstatebackendpropspropertytablename) | `string` | *No description.* |
 
 ---
 
-##### `bucketName`<sup>Required</sup> <a name="@pepperize/cdk-terraform-state-backend.TerraformStateBackendProps.property.bucketName" id="pepperizecdkterraformstatebackendterraformstatebackendpropspropertybucketname"></a>
+##### `bucketName`<sup>Optional</sup> <a name="@pepperize/cdk-terraform-state-backend.TerraformStateBackendProps.property.bucketName" id="pepperizecdkterraformstatebackendterraformstatebackendpropspropertybucketname"></a>
 
 ```typescript
 public readonly bucketName: string;
@@ -101,7 +113,17 @@ public readonly bucketName: string;
 
 ---
 
-##### `tableName`<sup>Required</sup> <a name="@pepperize/cdk-terraform-state-backend.TerraformStateBackendProps.property.tableName" id="pepperizecdkterraformstatebackendterraformstatebackendpropspropertytablename"></a>
+##### `policyName`<sup>Optional</sup> <a name="@pepperize/cdk-terraform-state-backend.TerraformStateBackendProps.property.policyName" id="pepperizecdkterraformstatebackendterraformstatebackendpropspropertypolicyname"></a>
+
+```typescript
+public readonly policyName: string;
+```
+
+- *Type:* `string`
+
+---
+
+##### `tableName`<sup>Optional</sup> <a name="@pepperize/cdk-terraform-state-backend.TerraformStateBackendProps.property.tableName" id="pepperizecdkterraformstatebackendterraformstatebackendpropspropertytablename"></a>
 
 ```typescript
 public readonly tableName: string;

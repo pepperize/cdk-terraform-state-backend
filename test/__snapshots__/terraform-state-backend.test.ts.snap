@@ -10,33 +10,6 @@ Object {
     },
   },
   "Resources": Object {
-    "TableCD117FA1": Object {
-      "DeletionPolicy": "Retain",
-      "Properties": Object {
-        "AttributeDefinitions": Array [
-          Object {
-            "AttributeName": "LockID",
-            "AttributeType": "S",
-          },
-        ],
-        "BillingMode": "PAY_PER_REQUEST",
-        "KeySchema": Array [
-          Object {
-            "AttributeName": "LockID",
-            "KeyType": "HASH",
-          },
-        ],
-        "PointInTimeRecoverySpecification": Object {
-          "PointInTimeRecoveryEnabled": true,
-        },
-        "SSESpecification": Object {
-          "SSEEnabled": false,
-        },
-        "TableName": "terraform-state-backend",
-      },
-      "Type": "AWS::DynamoDB::Table",
-      "UpdateReplacePolicy": "Retain",
-    },
     "TerraformStateBackendBucket7CE90B83": Object {
       "DeletionPolicy": "Retain",
       "Properties": Object {
@@ -109,6 +82,33 @@ Object {
         },
       },
       "Type": "AWS::S3::BucketPolicy",
+    },
+    "TerraformStateBackendTable8272602A": Object {
+      "DeletionPolicy": "Retain",
+      "Properties": Object {
+        "AttributeDefinitions": Array [
+          Object {
+            "AttributeName": "LockID",
+            "AttributeType": "S",
+          },
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "KeySchema": Array [
+          Object {
+            "AttributeName": "LockID",
+            "KeyType": "HASH",
+          },
+        ],
+        "PointInTimeRecoverySpecification": Object {
+          "PointInTimeRecoveryEnabled": true,
+        },
+        "SSESpecification": Object {
+          "SSEEnabled": false,
+        },
+        "TableName": "terraform-state-backend",
+      },
+      "Type": "AWS::DynamoDB::Table",
+      "UpdateReplacePolicy": "Retain",
     },
   },
   "Rules": Object {
