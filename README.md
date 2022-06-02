@@ -2,6 +2,7 @@
 [![npm (scoped)](https://img.shields.io/npm/v/@pepperize/cdk-terraform-state-backend?style=flat-square)](https://www.npmjs.com/package/@pepperize/cdk-terraform-state-backend)
 [![PyPI](https://img.shields.io/pypi/v/pepperize.cdk-terraform-state-backend?style=flat-square)](https://pypi.org/project/pepperize.cdk-terraform-state-backend/)
 [![Nuget](https://img.shields.io/nuget/v/Pepperize.CDK.TerraformStateBackend?style=flat-square)](https://www.nuget.org/packages/Pepperize.CDK.TerraformStateBackend/)
+[![Sonatype Nexus (Releases)](https://img.shields.io/nexus/r/com.pepperize/cdk-terraform-state-backend?server=https%3A%2F%2Fs01.oss.sonatype.org%2F&style=flat-square)](https://s01.oss.sonatype.org/content/repositories/releases/com/pepperize/cdk-terraform-state-backend/)
 [![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/pepperize/cdk-terraform-state-backend/release/main?label=release&style=flat-square)](https://github.com/pepperize/cdk-terraform-state-backend/actions/workflows/release.yml)
 [![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/pepperize/cdk-terraform-state-backend?sort=semver&style=flat-square)](https://github.com/pepperize/cdk-terraform-state-backend/releases)
 
@@ -43,6 +44,16 @@ pip install pepperize.cdk-terraform-state-backend
 
 ```
 dotnet add package Pepperize.CDK.TerraformStateBackend
+```
+
+### Java
+
+```xml
+<dependency>
+  <groupId>com.pepperize</groupId>
+  <artifactId>cdk-terraform-state-backend</artifactId>
+  <version>${cdkTerraformStateBackend.version}</version>
+</dependency>
 ```
 
 ## Example

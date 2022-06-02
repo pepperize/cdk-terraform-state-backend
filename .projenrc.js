@@ -13,9 +13,8 @@ const project = new AwsCdkConstructLibrary({
     "This project provides a CDK construct bootstrapping an AWS account with a S3 Bucket and a DynamoDB table as terraform state backend.",
   keywords: ["aws", "cdk", "terraform", "state", "backend", "s3", "dynamodb"],
   repositoryUrl: "https://github.com/pepperize/cdk-terraform-state-backend.git",
-  deps: ["@pepperize/cdk-private-bucket"],
+
   peerDeps: ["@pepperize/cdk-private-bucket"],
-  testDeps: ["@aws-cdk/assertions"],
   devDeps: ["@pepperize/projen-awscdk-construct", "cdk-nag@^2.0.0"],
 
   releaseToNpm: true,
@@ -27,6 +26,12 @@ const project = new AwsCdkConstructLibrary({
   publishToPypi: {
     distName: "pepperize.cdk-terraform-state-backend",
     module: "pepperize_cdk_terraform_state_backend",
+  },
+  publishToMaven: {
+    mavenEndpoint: "https://s01.oss.sonatype.org",
+    mavenGroupId: "com.pepperize",
+    mavenArtifactId: "cdk-terraform-state-backend",
+    javaPackage: "com.pepperize.cdk.terraform_state_backend",
   },
 });
 
