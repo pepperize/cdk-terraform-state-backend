@@ -1428,9 +1428,9 @@ case@1.6.3, case@^1.6.3:
   integrity sha512-mzDSXIPaFwVDvZAHqZ9VlbyF4yyXRuX6IvB06WvPYkqJVO24kX1PPhv9bfpKNFZyxYFmmgo03HUiD8iklmJYRQ==
 
 cdk-nag@^2.0.0:
-  version "2.14.33"
-  resolved "https://registry.yarnpkg.com/cdk-nag/-/cdk-nag-2.14.33.tgz#e47c4a9647463ad7d89831c48599737b3003e60d"
-  integrity sha512-Jmj2p2kuiYy56yEEWCKre0eLej/AWJdiKqnySwFSQL9mh6tSRQga6CSeQv0zsTGbTp3yGZUv7z1fTh7KodRsdw==
+  version "2.14.34"
+  resolved "https://registry.yarnpkg.com/cdk-nag/-/cdk-nag-2.14.34.tgz#0eef52c3ae2345ba918275ef282740528ce93688"
+  integrity sha512-n9FQQ009Er5f+tfa1OTE52KIMZj4OUWxN5gV0VuSZYB0mvNlRUgkZOBWmnN/sCxHQkZq9aBMKlc+zJ/3VxvRFA==
 
 chalk@^2.0.0, chalk@^2.4.2:
   version "2.4.2"
@@ -4921,9 +4921,9 @@ prettier-linter-helpers@^1.0.0:
     fast-diff "^1.1.2"
 
 prettier@^2.5.1:
-  version "2.6.2"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.6.2.tgz#e26d71a18a74c3d0f0597f55f01fb6c06c206032"
-  integrity sha512-PkUpF+qoXTqhOeWL9fu7As8LXsIUZ1WYaJiY/a7McAQzxjk82OF0tibkFXVCDImZtWxbvojFjerkiLb0/q8mew==
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.7.0.tgz#a4fdae07e5596c51c9857ea676cd41a0163879d6"
+  integrity sha512-nwoX4GMFgxoPC6diHvSwmK/4yU8FFH3V8XWtLQrbj4IBsK2pkYhG4kf/ljF/haaZ/aii+wNJqISrCDPgxGWDVQ==
 
 pretty-format@^27.0.0, pretty-format@^27.5.1:
   version "27.5.1"
