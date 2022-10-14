@@ -1,5 +1,5 @@
-const { AwsCdkConstructLibrary } = require("@pepperize/projen-awscdk-construct");
-const { javascript } = require("projen");
+import { AwsCdkConstructLibrary } from "@pepperize/projen-awscdk-construct";
+import { javascript } from "projen";
 
 const project = new AwsCdkConstructLibrary({
   author: "Patrick Florek",
@@ -13,6 +13,8 @@ const project = new AwsCdkConstructLibrary({
     "This project provides a CDK construct bootstrapping an AWS account with a S3 Bucket and a DynamoDB table as terraform state backend.",
   keywords: ["aws", "cdk", "terraform", "state", "backend", "s3", "dynamodb"],
   repositoryUrl: "https://github.com/pepperize/cdk-terraform-state-backend.git",
+
+  projenrcTs: true,
 
   peerDeps: ["@pepperize/cdk-private-bucket"],
   devDeps: ["@pepperize/projen-awscdk-construct", "cdk-nag@^2.0.0"],
