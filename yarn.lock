@@ -553,7 +553,7 @@
     chalk "^4.1.2"
     semver "^7.3.8"
 
-"@jsii/spec@1.70.0", "@jsii/spec@^1.69.0", "@jsii/spec@^1.70.0":
+"@jsii/spec@1.70.0", "@jsii/spec@^1.70.0":
   version "1.70.0"
   resolved "https://registry.yarnpkg.com/@jsii/spec/-/spec-1.70.0.tgz#9c9392397fa1d1a6fccd004bef3e8c0e92b45c15"
   integrity sha512-2l09VaZvT8OLRMwtVm+JxzrzpO6+eR4Scn9B8+zvE9NptX5jN+X68V0VngDuWTJqHs7ntbYCmHQDWuLm0bPr1A==
@@ -3383,17 +3383,17 @@ jsii-diff@^1.69.0:
     yargs "^16.2.0"
 
 jsii-docgen@^7.0.114:
-  version "7.0.119"
-  resolved "https://registry.yarnpkg.com/jsii-docgen/-/jsii-docgen-7.0.119.tgz#1a3c2bef58b93dabf50b479fffda13b739c2a773"
-  integrity sha512-zEHro+tgfvrtYULSfawcM69FPQKOi7ImLuvzuiRjwZSulelcFtWbnZCzAPUi1mcNTE3pG1n2aED9f8q4riJFBg==
+  version "7.0.120"
+  resolved "https://registry.yarnpkg.com/jsii-docgen/-/jsii-docgen-7.0.120.tgz#cd848d660eb83114981728fa2413b6473de823c2"
+  integrity sha512-6yIJS6N8NVP9WQUbmi3/cTIjMDZUqJiFJfgF+AA4Xu3MCfD0s6fQR1yUG/74XAr+ALX/ybc4t09EZK8fGjh/hQ==
   dependencies:
-    "@jsii/spec" "^1.69.0"
+    "@jsii/spec" "^1.70.0"
     case "^1.6.3"
     fs-extra "^10.1.0"
     glob "^7.2.3"
     glob-promise "^3.4.0"
-    jsii-reflect "^1.69.0"
-    jsii-rosetta "^1.69.0"
+    jsii-reflect "^1.70.0"
+    jsii-rosetta "^1.70.0"
     semver "^7.3.8"
     yargs "^16.2.0"
 
@@ -3416,7 +3416,7 @@ jsii-pacmak@^1.69.0:
     xmlbuilder "^15.1.1"
     yargs "^16.2.0"
 
-jsii-reflect@^1.69.0, jsii-reflect@^1.70.0:
+jsii-reflect@^1.70.0:
   version "1.70.0"
   resolved "https://registry.yarnpkg.com/jsii-reflect/-/jsii-reflect-1.70.0.tgz#09929607ebe3380a56d5187978b9da9a8686a97d"
   integrity sha512-1enHoO6/G5o6RB+lzbQEUkXBFoZZRGJCfgYboLcYiH0tITX/FjipeTR9Wgkh9QumwdlBlMTXuxEPyRFVjQ7jcg==
@@ -3428,7 +3428,7 @@ jsii-reflect@^1.69.0, jsii-reflect@^1.70.0:
     oo-ascii-tree "^1.70.0"
     yargs "^16.2.0"
 
-jsii-rosetta@^1.69.0, jsii-rosetta@^1.70.0:
+jsii-rosetta@^1.70.0:
   version "1.70.0"
   resolved "https://registry.yarnpkg.com/jsii-rosetta/-/jsii-rosetta-1.70.0.tgz#2618c4661410638f7a7ae432359e512bede94076"
   integrity sha512-iLfogMZ7tTP0g6iMGPHZOHCjn5+K4agb6oalFYbN8iUXVgf+DwKCOGTIN0TxNpy3YFvb4YhCWVENdYPDu/5Nvw==
