@@ -1319,9 +1319,9 @@ case@1.6.3, case@^1.6.3:
   integrity sha512-mzDSXIPaFwVDvZAHqZ9VlbyF4yyXRuX6IvB06WvPYkqJVO24kX1PPhv9bfpKNFZyxYFmmgo03HUiD8iklmJYRQ==
 
 cdk-nag@^2.0.0:
-  version "2.21.61"
-  resolved "https://registry.yarnpkg.com/cdk-nag/-/cdk-nag-2.21.61.tgz#79657303d610c0d02a52b1b7d209066c7c82f5c9"
-  integrity sha512-RCn+5P/u650dNM20ggU+1jcRV7GlmSlHqOCCB7yHJ7xBMJJz7Th9b+4D+UYjmqX4C8J0LjT1igsfoC3fIcjk3A==
+  version "2.21.64"
+  resolved "https://registry.yarnpkg.com/cdk-nag/-/cdk-nag-2.21.64.tgz#3426ab5f61e9cac5bdca0ff1f45b605aca411054"
+  integrity sha512-9HCbm22cYeHxED7v+yX3o2pMdIt6pvWMYVmtSH6tgn/Fm6T+JVcAaAYj1ogvOKRMSEcEDyIGgy7YE0h16Ks8AQ==
 
 chalk@^2.0.0, chalk@^2.4.2:
   version "2.4.2"
@@ -3572,9 +3572,9 @@ jsii-diff@^1.69.0:
     yargs "^16.2.0"
 
 jsii-docgen@^7.0.114:
-  version "7.0.202"
-  resolved "https://registry.yarnpkg.com/jsii-docgen/-/jsii-docgen-7.0.202.tgz#682e1ba521e6cdc05862938ff26a01f860216b24"
-  integrity sha512-C1/e+PSGNFFli4oc3NtXI3X0E39ychA/vze+GL56YE8fR5XurAaXzHNQb9JWpZLv4h+C4dvXc5Rgu+Y5Eb7Lwg==
+  version "7.0.205"
+  resolved "https://registry.yarnpkg.com/jsii-docgen/-/jsii-docgen-7.0.205.tgz#8f36c480f0c01f599592c02bf467edf00a94809e"
+  integrity sha512-uKNjBtW80PuQNlX/nI9gzOcnR2ZFvg1sYnL0E6RjUpTWOJ5xQOToreN6nKjQ8wybP6KeepsaCMaLMDTced+oDQ==
   dependencies:
     "@jsii/spec" "^1.73.0"
     case "^1.6.3"
@@ -4351,9 +4351,9 @@ prettier-linter-helpers@^1.0.0:
     fast-diff "^1.1.2"
 
 prettier@^2.5.1:
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.8.2.tgz#c4ea1b5b454d7c4b59966db2e06ed7eec5dfd160"
-  integrity sha512-BtRV9BcncDyI2tsuS19zzhzoxD8Dh8LiCx7j7tHzrkz8GFXAexeWFdi22mjE1d16dftH2qNaytVxqiRTGlMfpw==
+  version "2.8.3"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.8.3.tgz#ab697b1d3dd46fb4626fbe2f543afe0cc98d8632"
+  integrity sha512-tJ/oJ4amDihPoufT5sM0Z1SKEuKay8LfVAMlbbhnnkvt6BUserZylqo2PN+p9KeljLr0OHa2rXHU1T8reeoTrw==
 
 pretty-format@^27.0.0, pretty-format@^27.5.1:
   version "27.5.1"
