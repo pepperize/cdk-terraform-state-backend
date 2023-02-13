@@ -1320,9 +1320,9 @@ case@1.6.3, case@^1.6.3:
   integrity sha512-mzDSXIPaFwVDvZAHqZ9VlbyF4yyXRuX6IvB06WvPYkqJVO24kX1PPhv9bfpKNFZyxYFmmgo03HUiD8iklmJYRQ==
 
 cdk-nag@^2.0.0:
-  version "2.22.2"
-  resolved "https://registry.yarnpkg.com/cdk-nag/-/cdk-nag-2.22.2.tgz#27f02c11aba9e85c2911e4b48ba061a89d146b40"
-  integrity sha512-aUpxwvvi+KhGjneiw7A7QaDH9ayCr0nZCsZ/ChGLkFmveY17/omS9MKuAZ6u7Q1PXBZM7Ez8XvMb45iZAbTBwQ==
+  version "2.22.5"
+  resolved "https://registry.yarnpkg.com/cdk-nag/-/cdk-nag-2.22.5.tgz#314375f53ad890f484e4dcc54af655045f813269"
+  integrity sha512-WngE7wo52heInONglo127Pl6yUyaeCxz/i3J1zNSya99B8Sc6Fo3m39A+6AcIaxf8M4HC+TlXs3mYoEOLRp0mQ==
 
 chalk@^2.0.0, chalk@^2.4.2:
   version "2.4.2"
@@ -2102,9 +2102,9 @@ eslint-visitor-keys@^3.3.0:
   integrity sha512-mQ+suqKJVyeuwGYHAdjMFqjCyfl8+Ldnxuyp3ldiMBFKkvytrXUZWaiPCEav8qDHKty44bD+qV1IP4T+w+xXRA==
 
 eslint@^8:
-  version "8.33.0"
-  resolved "https://registry.yarnpkg.com/eslint/-/eslint-8.33.0.tgz#02f110f32998cb598c6461f24f4d306e41ca33d7"
-  integrity sha512-WjOpFQgKK8VrCnAtl8We0SUOy/oVZ5NHykyMiagV1M9r8IFpIJX7DduK6n1mpfhlG7T1NLWm2SuD8QB7KFySaA==
+  version "8.34.0"
+  resolved "https://registry.yarnpkg.com/eslint/-/eslint-8.34.0.tgz#fe0ab0ef478104c1f9ebc5537e303d25a8fb22d6"
+  integrity sha512-1Z8iFsucw+7kSqXNZVslXS8Ioa4u2KM7GPwuKtkTFAqZ/cHMcEaR+1+Br0wLlot49cNxIiZk5wp8EAbPcYZxTg==
   dependencies:
     "@eslint/eslintrc" "^1.4.1"
     "@humanwhocodes/config-array" "^0.11.8"
