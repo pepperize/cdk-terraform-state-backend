@@ -60,7 +60,7 @@ dotnet add package Pepperize.CDK.TerraformStateBackend
 ## Example
 
 ```typescript
-import { App, Stack } from "@aws-cdk/core";
+import { App, Stack } from "aws-cdk-lib";
 import { TerraformStateBackend } from "@pepperize/cdk-terraform-state-backend";
 
 const app = new App();
