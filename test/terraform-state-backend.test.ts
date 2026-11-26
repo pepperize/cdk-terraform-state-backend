@@ -1,4 +1,4 @@
-import { App, Aspects, aws_iam, Stack } from "aws-cdk-lib";
+import { App, Aspects, aws_iam, Duration, Stack } from "aws-cdk-lib";
 import { Template } from "aws-cdk-lib/assertions";
 import { AwsSolutionsChecks } from "cdk-nag";
 import { TerraformStateBackend } from "../src";
@@ -106,6 +106,29 @@ describe("TerraformStateBackend", () => {
     // Then
     template.hasResourceProperties("AWS::IAM::Policy", {
       Roles: [{ Ref: stack.getLogicalId(role.node.defaultChild as aws_iam.CfnRole) }],
+    });
+  });
+
+  it("Should add lifecycle rules to the bucket", () => {
+    // Given
+    const app = new App();
+    const stack = new Stack(app, "stack", {
+      env: {
+        account: "0",
+        region: "us-east-1",
+      },
+    });
+    const backend = new TerraformStateBackend(stack, "TerraformStateBackend", {});
+
+    // When
+    backend.bucket.addLifecycleRule({ expiration: Duration.days(7) });
+    const template = Template.fromStack(stack);
+
+    // Then
+    template.hasResourceProperties("AWS::S3::Bucket", {
+      LifecycleConfiguration: {
+        Rules: [{ ExpirationInDays: 7, Status: "Enabled" }],
+      },
     });
   });
 });

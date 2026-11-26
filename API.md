@@ -123,7 +123,7 @@ Any object.
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#@pepperize/cdk-terraform-state-backend.TerraformStateBackend.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#@pepperize/cdk-terraform-state-backend.TerraformStateBackend.property.bucket">bucket</a></code> | <code>aws-cdk-lib.aws_s3.IBucket</code> | *No description.* |
+| <code><a href="#@pepperize/cdk-terraform-state-backend.TerraformStateBackend.property.bucket">bucket</a></code> | <code>aws-cdk-lib.aws_s3.Bucket</code> | *No description.* |
 | <code><a href="#@pepperize/cdk-terraform-state-backend.TerraformStateBackend.property.policy">policy</a></code> | <code>aws-cdk-lib.aws_iam.Policy</code> | *No description.* |
 | <code><a href="#@pepperize/cdk-terraform-state-backend.TerraformStateBackend.property.table">table</a></code> | <code>aws-cdk-lib.aws_dynamodb.ITable</code> | *No description.* |
 
@@ -144,10 +144,10 @@ The tree node.
 ##### `bucket`<sup>Required</sup> <a name="bucket" id="@pepperize/cdk-terraform-state-backend.TerraformStateBackend.property.bucket"></a>
 
 ```typescript
-public readonly bucket: IBucket;
+public readonly bucket: Bucket;
 ```
 
-- *Type:* aws-cdk-lib.aws_s3.IBucket
+- *Type:* aws-cdk-lib.aws_s3.Bucket
 
 ---
 
