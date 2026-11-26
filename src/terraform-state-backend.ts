@@ -11,7 +11,7 @@ export interface TerraformStateBackendProps {
 export class TerraformStateBackend extends Construct {
   readonly bucket: aws_s3.IBucket;
   readonly table: aws_dynamodb.ITable;
-  readonly policy: aws_iam.IPolicy;
+  readonly policy: aws_iam.Policy;
 
   public constructor(scope: Construct, id: string, props: TerraformStateBackendProps) {
     super(scope, id);

@@ -86,7 +86,7 @@ Any object.
 | --- | --- | --- |
 | <code><a href="#@pepperize/cdk-terraform-state-backend.TerraformStateBackend.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
 | <code><a href="#@pepperize/cdk-terraform-state-backend.TerraformStateBackend.property.bucket">bucket</a></code> | <code>aws-cdk-lib.aws_s3.IBucket</code> | *No description.* |
-| <code><a href="#@pepperize/cdk-terraform-state-backend.TerraformStateBackend.property.policy">policy</a></code> | <code>aws-cdk-lib.aws_iam.IPolicy</code> | *No description.* |
+| <code><a href="#@pepperize/cdk-terraform-state-backend.TerraformStateBackend.property.policy">policy</a></code> | <code>aws-cdk-lib.aws_iam.Policy</code> | *No description.* |
 | <code><a href="#@pepperize/cdk-terraform-state-backend.TerraformStateBackend.property.table">table</a></code> | <code>aws-cdk-lib.aws_dynamodb.ITable</code> | *No description.* |
 
 ---
@@ -116,10 +116,10 @@ public readonly bucket: IBucket;
 ##### `policy`<sup>Required</sup> <a name="policy" id="@pepperize/cdk-terraform-state-backend.TerraformStateBackend.property.policy"></a>
 
 ```typescript
-public readonly policy: IPolicy;
+public readonly policy: Policy;
 ```
 
-- *Type:* aws-cdk-lib.aws_iam.IPolicy
+- *Type:* aws-cdk-lib.aws_iam.Policy
 
 ---
 
