@@ -6,7 +6,8 @@ const project = new AwsCdkConstructLibrary({
   authorAddress: "patrick.florek@gmail.com",
   license: "MIT",
   copyrightOwner: "Pepperize UG (haftungsbeschränkt)",
-  cdkVersion: "2.8.0",
+  cdkVersion: "2.278.0",
+  jsiiVersion: "~6.0.0",
   defaultReleaseBranch: "main",
   name: "@pepperize/cdk-terraform-state-backend",
   description:
@@ -15,9 +16,15 @@ const project = new AwsCdkConstructLibrary({
   repositoryUrl: "https://github.com/pepperize/cdk-terraform-state-backend.git",
 
   projenrcTs: true,
+  minNodeVersion: "22.13.0",
+  workflowNodeVersion: "24.x",
+  jestOptions: {
+    jestVersion: "^30",
+  },
+  packageManager: javascript.NodePackageManager.YARN_CLASSIC,
 
   peerDeps: ["@pepperize/cdk-private-bucket"],
-  devDeps: ["@pepperize/projen-awscdk-construct@~0.0.730", "cdk-nag@^2.0.0"],
+  devDeps: ["@pepperize/projen-awscdk-construct@~0.1.1", "@types/node@^22", "typescript@~6.0", "cdk-nag@^2"],
 
   releaseToNpm: true,
   npmAccess: javascript.NpmAccess.PUBLIC,
@@ -30,7 +37,6 @@ const project = new AwsCdkConstructLibrary({
     module: "pepperize_cdk_terraform_state_backend",
   },
   publishToMaven: {
-    mavenEndpoint: "https://s01.oss.sonatype.org",
     mavenGroupId: "com.pepperize",
     mavenArtifactId: "cdk-terraform-state-backend",
     javaPackage: "com.pepperize.cdk.terraform_state_backend",
