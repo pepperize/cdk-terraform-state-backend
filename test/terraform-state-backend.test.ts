@@ -1,4 +1,4 @@
-import { App, Aspects, Stack } from "aws-cdk-lib";
+import { App, Aspects, aws_iam, Stack } from "aws-cdk-lib";
 import { Template } from "aws-cdk-lib/assertions";
 import { AwsSolutionsChecks } from "cdk-nag";
 import { TerraformStateBackend } from "../src";
@@ -83,5 +83,29 @@ describe("TerraformStateBackend", () => {
 
     // Then
     expect(template).toMatchSnapshot();
+  });
+
+  it("Should attach policy to a role", () => {
+    // Given
+    const app = new App();
+    const stack = new Stack(app, "stack", {
+      env: {
+        account: "0",
+        region: "us-east-1",
+      },
+    });
+    const backend = new TerraformStateBackend(stack, "TerraformStateBackend", {});
+    const role = new aws_iam.Role(stack, "Role", {
+      assumedBy: new aws_iam.AccountRootPrincipal(),
+    });
+
+    // When
+    role.attachInlinePolicy(backend.policy);
+    const template = Template.fromStack(stack);
+
+    // Then
+    template.hasResourceProperties("AWS::IAM::Policy", {
+      Roles: [{ Ref: stack.getLogicalId(role.node.defaultChild as aws_iam.CfnRole) }],
+    });
   });
 });
