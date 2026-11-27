@@ -39,7 +39,7 @@
   },
   "devDependencies": {
     "@pepperize/cdk-private-bucket": "0.0.304",
-    "@pepperize/projen-awscdk-construct": "~0.1.1",
+    "@pepperize/projen-awscdk-construct": "~0.1.2",
     "@types/jest": "^30",
     "@types/node": "^22",
     "@typescript-eslint/eslint-plugin": "^8",
