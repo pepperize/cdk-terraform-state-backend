@@ -50,4 +50,33 @@ export class TerraformStateBackend extends Construct {
       ],
     });
   }
+  /**
+   * Grants read access to the state bucket and lock table, e.g. for `terraform plan`.
+   *
+   * Includes lock table writes, because terraform acquires the state lock on plan.
+   */
+  public grantRead(grantee: aws_iam.IGrantable): aws_iam.Grant {
+    return this.grant(grantee, ["s3:ListBucket", "s3:GetObject"]);
+  }
+
+  /**
+   * Grants read write access to the state bucket and lock table, e.g. for `terraform apply`.
+   */
+  public grantReadWrite(grantee: aws_iam.IGrantable): aws_iam.Grant {
+    return this.grant(grantee, ["s3:ListBucket", "s3:GetObject", "s3:PutObject", "s3:DeleteObject"]);
+  }
+
+  private grant(grantee: aws_iam.IGrantable, bucketActions: string[]): aws_iam.Grant {
+    return aws_iam.Grant.addToPrincipal({
+      grantee,
+      actions: bucketActions,
+      resourceArns: [this.bucket.bucketArn, this.bucket.arnForObjects("*")],
+    }).combine(
+      aws_iam.Grant.addToPrincipal({
+        grantee,
+        actions: ["dynamodb:GetItem", "dynamodb:PutItem", "dynamodb:DeleteItem"],
+        resourceArns: [this.table.tableArn],
+      }),
+    );
+  }
 }

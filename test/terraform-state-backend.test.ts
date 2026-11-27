@@ -1,5 +1,5 @@
 import { App, Aspects, aws_iam, Duration, Stack } from "aws-cdk-lib";
-import { Template } from "aws-cdk-lib/assertions";
+import { Match, Template } from "aws-cdk-lib/assertions";
 import { AwsSolutionsChecks } from "cdk-nag";
 import { TerraformStateBackend } from "../src";
 
@@ -129,6 +129,80 @@ describe("TerraformStateBackend", () => {
       LifecycleConfiguration: {
         Rules: [{ ExpirationInDays: 7, Status: "Enabled" }],
       },
+    });
+  });
+
+  const lockStatement = {
+    Action: ["dynamodb:GetItem", "dynamodb:PutItem", "dynamodb:DeleteItem"],
+    Effect: "Allow",
+    Resource: Match.anyValue(),
+  };
+
+  it("Should grant read access to state and lock table", () => {
+    // Given
+    const app = new App();
+    const stack = new Stack(app, "stack", {
+      env: {
+        account: "0",
+        region: "us-east-1",
+      },
+    });
+    const backend = new TerraformStateBackend(stack, "TerraformStateBackend", {});
+    const role = new aws_iam.Role(stack, "Role", {
+      assumedBy: new aws_iam.AccountRootPrincipal(),
+    });
+
+    // When
+    backend.grantRead(role);
+    const template = Template.fromStack(stack);
+
+    // Then
+    template.hasResourceProperties("AWS::IAM::Policy", {
+      PolicyDocument: {
+        Statement: [
+          {
+            Action: ["s3:ListBucket", "s3:GetObject"],
+            Effect: "Allow",
+            Resource: Match.anyValue(),
+          },
+          lockStatement,
+        ],
+      },
+      Roles: [{ Ref: stack.getLogicalId(role.node.defaultChild as aws_iam.CfnRole) }],
+    });
+  });
+
+  it("Should grant read write access to state and lock table", () => {
+    // Given
+    const app = new App();
+    const stack = new Stack(app, "stack", {
+      env: {
+        account: "0",
+        region: "us-east-1",
+      },
+    });
+    const backend = new TerraformStateBackend(stack, "TerraformStateBackend", {});
+    const role = new aws_iam.Role(stack, "Role", {
+      assumedBy: new aws_iam.AccountRootPrincipal(),
+    });
+
+    // When
+    backend.grantReadWrite(role);
+    const template = Template.fromStack(stack);
+
+    // Then
+    template.hasResourceProperties("AWS::IAM::Policy", {
+      PolicyDocument: {
+        Statement: [
+          {
+            Action: ["s3:ListBucket", "s3:GetObject", "s3:PutObject", "s3:DeleteObject"],
+            Effect: "Allow",
+            Resource: Match.anyValue(),
+          },
+          lockStatement,
+        ],
+      },
+      Roles: [{ Ref: stack.getLogicalId(role.node.defaultChild as aws_iam.CfnRole) }],
     });
   });
 });
