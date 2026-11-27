@@ -24,7 +24,7 @@ const project = new AwsCdkConstructLibrary({
   packageManager: javascript.NodePackageManager.YARN_CLASSIC,
 
   peerDeps: ["@pepperize/cdk-private-bucket"],
-  devDeps: ["@pepperize/projen-awscdk-construct@~0.1.1", "@types/node@^22", "typescript@~6.0", "cdk-nag@^2"],
+  devDeps: ["@pepperize/projen-awscdk-construct@~0.1.2", "@types/node@^22", "typescript@~6.0", "cdk-nag@^2"],
 
   releaseToNpm: true,
   npmAccess: javascript.NpmAccess.PUBLIC,
