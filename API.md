@@ -46,6 +46,8 @@ new TerraformStateBackend(scope: Construct, id: string, props: TerraformStateBac
 | --- | --- |
 | <code><a href="#@pepperize/cdk-terraform-state-backend.TerraformStateBackend.toString">toString</a></code> | Returns a string representation of this construct. |
 | <code><a href="#@pepperize/cdk-terraform-state-backend.TerraformStateBackend.with">with</a></code> | Applies one or more mixins to this construct. |
+| <code><a href="#@pepperize/cdk-terraform-state-backend.TerraformStateBackend.grantRead">grantRead</a></code> | Grants read access to the state bucket and lock table, e.g. for `terraform plan`. |
+| <code><a href="#@pepperize/cdk-terraform-state-backend.TerraformStateBackend.grantReadWrite">grantReadWrite</a></code> | Grants read write access to the state bucket and lock table, e.g. for `terraform apply`. |
 
 ---
 
@@ -75,6 +77,36 @@ constructs.
 - *Type:* ...constructs.IMixin[]
 
 The mixins to apply.
+
+---
+
+##### `grantRead` <a name="grantRead" id="@pepperize/cdk-terraform-state-backend.TerraformStateBackend.grantRead"></a>
+
+```typescript
+public grantRead(grantee: IGrantable): Grant
+```
+
+Grants read access to the state bucket and lock table, e.g. for `terraform plan`.
+
+Includes lock table writes, because terraform acquires the state lock on plan.
+
+###### `grantee`<sup>Required</sup> <a name="grantee" id="@pepperize/cdk-terraform-state-backend.TerraformStateBackend.grantRead.parameter.grantee"></a>
+
+- *Type:* aws-cdk-lib.aws_iam.IGrantable
+
+---
+
+##### `grantReadWrite` <a name="grantReadWrite" id="@pepperize/cdk-terraform-state-backend.TerraformStateBackend.grantReadWrite"></a>
+
+```typescript
+public grantReadWrite(grantee: IGrantable): Grant
+```
+
+Grants read write access to the state bucket and lock table, e.g. for `terraform apply`.
+
+###### `grantee`<sup>Required</sup> <a name="grantee" id="@pepperize/cdk-terraform-state-backend.TerraformStateBackend.grantReadWrite.parameter.grantee"></a>
+
+- *Type:* aws-cdk-lib.aws_iam.IGrantable
 
 ---
 
